@@ -1,0 +1,122 @@
+  body, html {
+        height: 100%;
+        margin: 0;
+        font: 400 20px/1.8 "Andale", sans-serif;
+        font-family: monospace;
+        color: #777;
+  }
+
+  .bgimg {
+        position: relative;
+        opacity: 1;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 100%;
+  }
+
+  .textbg {
+        color: #ddd;
+        background-color: #282E34;
+        text-align: center;
+        padding: 50px 80px;
+        text-align: justify;
+  }
+
+  .textbox {
+        max-width: 900px;
+        margin: 0 auto;
+  }
+
+  .caption {
+        position: absolute;
+        left: 0;
+        top: 30%;
+        width: 100%;
+        text-align: center;
+        color: #000;
+  }
+
+  .caption span.border {
+        background-color: #111;
+        color: #fff;
+        padding: 5px;
+        font-size: 50px;
+        letter-spacing: 10px;
+  }
+
+  a:link {
+        color: #e06cbc;
+        background-color: transparent;
+        text-decoration: none;
+  }
+  a:visited {
+        color: #9609c9;
+        background-color: transparent;
+        text-decoration: none;
+  }
+  a:active {
+        color: #c71f9c;
+        background-color: transparent;
+  }
+
+  h3 {
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font: 20px "Lato", sans-serif;
+        color: #111;
+  }
+
+  ul {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+  }
+
+  li:before {
+        content: "❤";
+        padding-right: 5px;
+  }
+
+  /* The navigation bar */
+  .navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; /* Set the navbar to fixed position */
+  right: 0;
+  left: 0;
+  z-index: 1;
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  }
+
+  /* Links inside the navbar */
+  .navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 2px 20px;
+  text-decoration: none;
+  font-size: 15px;
+  }
+
+  /* Change background on mouse-over */
+  .navbar a:hover {
+  background: #ddd;
+  color: black;
+  }
+
+  /* Main content */
+  .main {
+  margin-top: 30px; /* Add a top margin to avoid content overlay */
+  }
+
+
+  /* Turn off parallax scrolling for tablets and phones */
+  @media only screen and (max-device-width: 1024px) {
+          .bgimg {
+                  background-attachment: scroll;
+          }
+  }
