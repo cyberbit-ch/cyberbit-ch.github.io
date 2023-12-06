@@ -4,11 +4,18 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
   <title>Independent Escort Claire</title>
+  <script src="https://code.jquery.com/jquery.min.js"></script>
 </head>
 <body>
-  <div class="navbar">
-    <a href="#start">Start</a> <a href="#about">About</a> <a href="#booking">Booking</a> <a href="blog.html">Blog</a> <a href="#contact">Contact</a>
+  <div id="nav-placeholder">
   </div>
+
+  <script>
+    (function(){
+      $("#nav-placeholder").load("navbar.html");
+    })();
+  </script>
+
   <div class="main"></div>
   <div class="bgimg" style="background-image: url(static/images/latex_book.jpg)">
     <article id='start'>
