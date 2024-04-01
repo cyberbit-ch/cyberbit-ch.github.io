@@ -121,11 +121,15 @@ li:before {
     }
 
     body {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .navbar a {
-        padding: 2px 25px;
+        padding: 2px 22px;
         font-size: 25px;
+    }
+
+    .textbox {
+        font-size: 10px;
     }
 }
