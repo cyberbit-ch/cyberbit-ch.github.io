@@ -97,9 +97,9 @@ li:before {
     display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 2px 20px;
+    padding: 0.2vw 1.4vw; /* approx. 2px 20px */
     text-decoration: none;
-    font-size: 15px;
+    font-size: 0.9vw; /* ~15px */
 }
 
 /* Change background on mouse-over */
@@ -121,15 +121,15 @@ li:before {
     }
 
     body {
-        font-size: 10px;
+        font-size: 1vw; /* ~10px */
     }
 
     .navbar a {
-        padding: 2px 22px;
-        font-size: 25px;
+        padding: 0.2vh 2.15vw; /* ~2px 22px */
+        font-size: 2.44vw; /* ~25px */
     }
 
     .textbox {
-        font-size: 10px;
+        font-size: 1vw; /* ~10px */
     }
 }
