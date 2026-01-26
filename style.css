@@ -161,13 +161,39 @@ li:before {
     background-color: #282E34;
 }
 
-.contact-section {
-    color: #777;
-    background-color: #F1F0EA;
-    padding: 50px 40px;
+.section-title {
+    text-align: center;
+    font-size: 30px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-/* Turn off parallax scrolling for tablets and phones */
+.special-title {
+    color: #933;
+    text-align: center;
+    font-size: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.verification-seals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.verification-seals img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    padding: 20px 0;
+    text-align: center;
+}
 .subtitle {
     letter-spacing: 10px;
     font-size: 20px;
