@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.6.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://escort-claire-zurich.ch" />
   <link rel="stylesheet" href="style.css">
-  <title>Independent Escort Claire</title>
+  <title>Gallery - Independent Escort Claire</title>
 <style>
 body {
   background-color: #F1F0EA;
@@ -76,25 +75,24 @@ img {
 }
 
 </style>
-
-<script src="https://code.jquery.com/jquery.min.js"></script>
-
 </head>
 <body>
 
-  <div id="nav-placeholder">
-  </div>
+  <div id="nav-placeholder"></div>
 
   <script>
-    $(function(){
-      $("#nav-placeholder").load("navbar.html");
-    });
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('nav-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navbar:', error));
   </script>
 
   <div class="row">
     <div class="column">
       <a href="gallery0.html">
-        <img src="static/images/gallery/0/09_t.jpg" class="hover-shadow">
+        <img src="static/images/gallery/0/09_t.jpg" class="hover-shadow" alt="Lazy Sunday coding gallery preview">
         <div class="textbg">
           <div class="textbox">
                 Lazy Sunday coding
@@ -105,7 +103,7 @@ img {
 
     <div class="column">
       <a href="gallery1.html">
-        <img src="static/images/gallery/1/03_t.jpg" class="hover-shadow">
+        <img src="static/images/gallery/1/03_t.jpg" class="hover-shadow" alt="Neon Lights gallery preview">
         <div class="textbg">
           <div class="textbox">
                 Neon Lights
@@ -114,9 +112,6 @@ img {
       </a>
     </div>
   </div>
-
-
 </body>
-
 </html>
 
