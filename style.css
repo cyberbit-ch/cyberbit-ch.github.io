@@ -1,9 +1,18 @@
+* {
+    box-sizing: border-box;
+}
+
 body, html {
     height: 100%;
     margin: 0;
     font: 400 20px/1.8 "Andale", sans-serif;
     font-family: monospace;
     color: #777;
+}
+
+body {
+    padding-top: 50px;
+    box-sizing: border-box;
 }
 
 .bgimg {
@@ -13,7 +22,7 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100%;
+    min-height: calc(100vh - 50px);
 }
 
 .textbg {
@@ -80,26 +89,41 @@ li:before {
 }
 
 /* The navigation bar */
-.navbar {
-    overflow: hidden;
+#nav-placeholder {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
     background-color: #333;
-    position: fixed; /* Set the navbar to fixed position */
-    right: 0;
-    left: 0;
-    z-index: 1;
-    top: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */
+    width: 100%;
+}
+
+.navbar {
+    background-color: #333;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* Links inside the navbar */
 .navbar a {
-    float: left;
     display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 0.2vw 1.4vw; /* approx. 2px 20px */
+    padding: 14px 20px;
     text-decoration: none;
-    font-size: 0.9vw; /* ~15px */
+    font-size: 17px;
+}
+
+
+/* Links inside the navbar */
+.navbar a {
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
 }
 
 /* Change background on mouse-over */
@@ -110,26 +134,96 @@ li:before {
 
 /* Main content */
 .main {
-    margin-top: 30px; /* Add a top margin to avoid content overlay */
+    margin-top: 0;
 }
 
 
+.content-section {
+    position: relative;
+    text-align: center;
+    padding: 50px 80px;
+    text-align: justify;
+}
+
+.welcome-section {
+    color: #777;
+    background-color: #F1F0EA;
+}
+
+.winter-special {
+    color: #933;
+    background-color: #DFDDCF;
+    padding: 20px;
+}
+
+.booking-info {
+    color: #ddd;
+    background-color: #282E34;
+}
+
+.contact-section {
+    color: #777;
+    background-color: #F1F0EA;
+    padding: 50px 40px;
+}
+
 /* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1024px) {
+.subtitle {
+    letter-spacing: 10px;
+    font-size: 20px;
+    color: #fff;
+}
+
+@media only screen and (max-width: 1024px) {
+    .subtitle {
+        letter-spacing: 5px;
+        font-size: 16px;
+    }
     .bgimg {
         background-attachment: scroll;
+        min-height: 400px;
     }
 
     body {
-        font-size: 1vw; /* ~10px */
+        font-size: 16px;
     }
 
     .navbar a {
-        padding: 0.2vh 2.15vw; /* ~2px 22px */
-        font-size: 2.44vw; /* ~25px */
+        padding: 10px 15px;
+        font-size: 18px;
+    }
+
+    .textbg, .content-section {
+        padding: 30px 20px;
+    }
+
+    .caption span.border {
+        font-size: 30px !important;
+        letter-spacing: 5px;
     }
 
     .textbox {
-        font-size: 1vw; /* ~10px */
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        padding-top: 70px;
+    }
+    .bgimg {
+        min-height: calc(100vh - 70px);
+    }
+    .navbar a {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .main {
+        margin-top: 0;
+    }
+
+    .content-section, .textbg {
+        padding: 20px 15px;
     }
 }
