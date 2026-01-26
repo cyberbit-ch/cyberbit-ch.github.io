@@ -36,7 +36,10 @@ img {
 .mySlides {
   text-align: center;
   width: 100%;
-  max-height: 80%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Add a pointer when hovering over the thumbnail images */
@@ -49,16 +52,22 @@ img {
 .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 50%;
+  transform: translateY(-50%);
   width: auto;
   padding: 16px;
-  margin-top: 50px;
   color: grey;
   font-weight: bold;
   font-size: 40px;
   border-radius: 0 3px 3px 0;
   user-select: none;
   -webkit-user-select: none;
+  z-index: 10;
+}
+
+/* Position the "left button" to the left */
+.prev {
+  left: 0;
 }
 
 /* Position the "next button" to the right */
@@ -74,8 +83,10 @@ img {
 }
 
 @media screen and (max-width: 600px) {
+  .fullscreen {
+    height: calc(100vh - 70px);
+  }
   .prev, .next {
-    margin-top: -150px;
     font-size: 20px;
   }
 }
@@ -83,16 +94,36 @@ img {
 /* Container for image text */
 .caption-container {
   text-align: center;
-  background-color: #000000;
+  background-color: #222;
   padding: 2px 16px;
-  height: 60px;
+  height: 40px;
   width: 100%;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caption-container p {
+  margin: 0;
 }
 
 .row {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 6 columns */
+  grid-template-columns: repeat(12, 1fr); /* 12 columns on desktop */
+}
+
+@media screen and (max-width: 800px) {
+  .row {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .mySlides {
+    align-items: flex-start;
+    height: 80vh;
+  }
+  .container {
+    max-height: 80vh;
+  }
 }
 
 .row:after {
@@ -133,9 +164,34 @@ img {
 }
 
 .fullscreen {
-  height: 100vh;  /* 100% of viewport height */
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 50px);  /* Adjust for navbar height */
   width: 100vw;   /* 100% of viewport width */
+  position: relative;
 }
+
+.container {
+  flex: 1;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+/* Hide the images by default */
+.mySlides {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
 
 .active,
 .thumbnail:hover {
@@ -205,10 +261,10 @@ img {
     <div class="mySlides">
       <img src="static/images/gallery/0/12.jpg">
     </div>
-  </div>
 
-  <a class="prev" onclick="plusSlides(-1)">❮</a>
-  <a class="next" onclick="plusSlides(1)">❯</a>
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+  </div>
 
   <div class="caption-container">
     <p id="caption"></p>
@@ -290,7 +346,7 @@ function showSlides(n) {
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";
+  slides[slideIndex-1].style.display = "flex";
   dots[slideIndex-1].className += " active";
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
