@@ -24,6 +24,42 @@
       .then(response => response.text())
       .then(data => {
         document.getElementById('nav-placeholder').innerHTML = data;
+        var lastScrollTop = 0;
+        var navbar = document.getElementById('nav-placeholder');
+        var hideTimeout;
+
+        function handleInteraction() {
+          if (window.matchMedia('(orientation: landscape)').matches && document.body.classList.contains('gallery-page')) {
+            navbar.classList.remove('nav-hidden');
+            clearTimeout(hideTimeout);
+            hideTimeout = setTimeout(function() {
+              navbar.classList.add('nav-hidden');
+            }, 3000);
+          }
+        }
+
+        window.addEventListener('scroll', function() {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          if (window.matchMedia('(orientation: landscape)').matches && document.body.classList.contains('gallery-page')) {
+            handleInteraction();
+          } else {
+            if (scrollTop > lastScrollTop && scrollTop > 50) {
+              navbar.classList.add('nav-hidden');
+            } else {
+              navbar.classList.remove('nav-hidden');
+            }
+          }
+          lastScrollTop = scrollTop;
+        });
+
+        ['mousemove', 'mousedown', 'touchstart', 'keydown'].forEach(function(evt) {
+          window.addEventListener(evt, handleInteraction);
+        });
+
+        // Initial state for landscape
+        if (window.matchMedia('(orientation: landscape)').matches && document.body.classList.contains('gallery-page')) {
+          handleInteraction();
+        }
       })
       .catch(error => console.error('Error loading navbar:', error));
   </script>
