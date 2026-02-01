@@ -15,75 +15,6 @@
   <link rel="canonical" href="https://escort-claire-zurich.ch" />
   <link rel="stylesheet" href="style.css">
   <title>Gallery - Independent Escort Claire</title>
-<style>
-body {
-  background-color: #F1F0EA;
-}
-
-.column > .row {
-  float: left;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Create equal columns that float next to each other */
-.column {
-  float: left;
-  width: 45%;
-  margin: 2.5%;
-  margin-top: 20px;
-}
-
-.textbg {
-  padding: 10px 0px;
-  text-align: center;
-}
-
-@media screen and (max-width: 800px) {
-  .column {
-    width: 90%;
-    margin: 5%;
-    margin-top: 5vh;
-  }
-}
-
-/* Caption text */
-.caption-container {
-  text-align: center;
-  background-color: black;
-  padding: 2px 16px;
-  color: white;
-}
-
-img.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
-
-img.hover-shadow {
-  transition: 0.3s;
-}
-
-.hover-shadow:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-img {
-  width: 100%; /* Adjust the percentage as needed */
-  height: auto;
-  max-width: 100%; /* Ensure the image does not exceed its natural size */
-  display: block;
-}
-
-</style>
 </head>
 <body class="gallery-page">
 
@@ -104,7 +35,7 @@ img {
             clearTimeout(hideTimeout);
             hideTimeout = setTimeout(function() {
               navbar.classList.add('nav-hidden');
-            }, 3000);
+            }, 1500);
           }
         }
 
@@ -134,11 +65,11 @@ img {
       .catch(error => console.error('Error loading navbar:', error));
   </script>
 
-  <div class="row">
-    <div class="column">
+  <div class="gallery-index-row">
+    <div class="gallery-index-column">
       <a href="gallery0.html">
         <img src="static/images/gallery/0/09_t.jpg" class="hover-shadow" alt="Lazy Sunday coding gallery preview">
-        <div class="textbg">
+        <div class="gallery-index-textbg">
           <div class="textbox">
                 Lazy Sunday coding
           </div>
@@ -146,10 +77,10 @@ img {
       </a>
     </div>
 
-    <div class="column">
+    <div class="gallery-index-column">
       <a href="gallery1.html">
         <img src="static/images/gallery/1/03_t.jpg" class="hover-shadow" alt="Neon Lights gallery preview">
-        <div class="textbg">
+        <div class="gallery-index-textbg">
           <div class="textbox">
                 Neon Lights
           </div>
