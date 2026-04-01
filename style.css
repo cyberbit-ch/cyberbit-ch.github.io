@@ -195,6 +195,43 @@ li:before {
     height: auto;
 }
 
+.verification-seals img[src*="tryst.link"] {
+    max-width: 250px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    transition: transform 0.2s;
+}
+
+.social-links a:hover {
+    transform: scale(1.1);
+}
+
+.social-links svg {
+    width: 40px;
+    height: 40px;
+    fill: #777;
+}
+
+.social-links a:hover svg.icon-bsky {
+    fill: #0085ff;
+}
+
+.social-links a:hover svg.icon-x {
+    fill: #000;
+}
+
+.social-links a:hover svg.icon-mail {
+    fill: #e06cbc;
+}
+
 footer {
     padding: 20px 0;
     text-align: center;
